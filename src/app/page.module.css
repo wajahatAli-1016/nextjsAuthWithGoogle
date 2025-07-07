@@ -1,7 +1,6 @@
 .container{
-  background-color: #15022b;
+  /* background-color: #15022b; */
   display: flex;
-  color: white;
   height: 700px;
   width: 100%;
   justify-content: center;
@@ -12,4 +11,107 @@
   height: 30px;
   width: 50px;
   cursor: pointer;
+}
+.btnL{
+  margin-left: 120px;
+  padding: 15px;
+  height: 30px;
+  width: 130px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 20px;
+}
+.message{
+  color: red;
+  margin-left: 160px;
+}
+.orL{
+  margin-left: 170px;
+  margin-top: 5px;
+}
+.btnGoogle{
+ margin-left: 160px;
+ height: 40px;
+ width: 130px;
+ border-radius: 20px;
+ margin-top: 5px;
+ border: 1px solid black;
+}
+.btnGoogleL{
+  margin-left: 120px;
+ border: 1px solid black;
+
+  margin-top: 5px ;
+  height: 40px;
+  width: 130px;
+  border-radius: 20px;
+ }
+ .titleL{
+  margin-left: 125px;
+ }
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  
+}
+.input{
+  padding: 15px;
+  width:350px;
+  margin: 10px 10px 10px 0px;
+
+}.inputS{
+  padding: 15px;
+  width:460px;
+  margin: 10px 10px 10px 0px;
+}
+.title{
+  margin-left: 160px;
+}
+.btn{
+  width: 130px;
+  cursor: pointer;
+  margin-left: 160px;
+  margin-top: 5px;
+  border-radius: 20px;
+  padding: 20px;
+
+
+
+}
+.card{
+  background-color:rgb(241, 236, 236);
+  border-radius: 20px;
+  height: 370px;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}
+.or{
+  margin-left: 210px;
+  margin-top: 5px;
+}
+.link{
+  margin-left: 110px;
+  margin-top: 5px;
+
+}
+.cardS{
+  height:620px;
+  width:500px;
+  background-color:rgb(241, 236, 236);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}
+.linkL{
+  margin-left: 80px;
+  margin-top: 5px;
+
+}
+.image{
+  width:30px
 }
