@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react"
-import { FaGoogle } from "react-icons/fa"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -15,16 +14,43 @@ import image from "../assets/google.png"
 
 const Home = () => {
   const [form, setForm] = useState({ email: "", password: "" })
+  const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
 
-  const handleSubmit = () => {
+  const handleSubmit = async(e) => {
 
     console.log("Login submitted:", form)
-    router.replace('/homepage')
+
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify(form),
+      });
+      
+
+
+      const data = await response.json();
+      if(!response.ok){
+        setMessage(data.message);
+        return;
+      }
+      if(response.ok){
+        router.push('/homePage'); 
+      }
+      
+      
+
+      
+    } catch(err){
+      console.log(err)
+    }
 
 
   }
@@ -75,6 +101,11 @@ const Home = () => {
                 required
               />
             </div>
+            {message && (
+        <p className={styles.red}>
+          {message}
+        </p>
+      )}
             <Button type="submit" className={styles.btnL} >
               Login
             </Button>
