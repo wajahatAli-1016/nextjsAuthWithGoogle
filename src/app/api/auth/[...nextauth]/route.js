@@ -23,7 +23,7 @@ const handler = NextAuth({
                   const checkEmail = await User.find({email:user.email})
 
                   if(checkEmail.length==0){
-                    await User.insertMany({name:user.name,email:user.email})
+                    await User.insertMany({firstName:user.firstName,lastName:user.lastName,email:user.email,password:user.password});
                   }
                   return true;
             }

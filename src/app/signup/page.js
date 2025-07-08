@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { FaGoogle } from "react-icons/fa"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { signIn, useSession } from "next-auth/react"
@@ -13,7 +12,12 @@ import Link from "next/link";
 import image from "../../assets/google.png"
 
 export default function LoginForm() {
-    const [form, setForm] = useState({ email: "", password: "" })
+    const [form, setForm] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+      });
     const [message, setMessage] = useState("")
 
     const handleChange = (e) => {
@@ -21,14 +25,28 @@ export default function LoginForm() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        console.log("Login submitted:", form)
-        if (form.password !== form.confirmPassword) {
-            setMessage("password do not match")
-            return
-        }
-
-    }
+        e.preventDefault();
+        console.log(e);
+    
+        try {
+          const response = await fetch('/api/signup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body:JSON.stringify(form),
+          });
+    
+          const data = await response.json();
+    
+          
+    
+          
+          router.push('/'); 
+        } catch (err) {
+          console.log(err)
+        } 
+      };
     const { data: session } = useSession();
     const router = useRouter();
 
@@ -52,7 +70,7 @@ export default function LoginForm() {
                             <Input
                                 className={styles.inputS}
                                 id="first-name"
-                                name="first-name"
+                                name="firstName"
                                 type="text"
                                 placeholder="first name"
                               
@@ -65,7 +83,7 @@ export default function LoginForm() {
                             <Input
                                 className={styles.inputS}
                                 id="last-name"
-                                name="last-name"
+                                name="lastName"
                                 type="text"
                                 placeholder="last name"
                                
