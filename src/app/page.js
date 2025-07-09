@@ -15,14 +15,15 @@ import image from "../assets/google.png"
 const Home = () => {
   const [form, setForm] = useState({ email: "", password: "" })
   const [message, setMessage] = useState('');
+  const { data: session } = useSession();
+  const router = useRouter();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-
   const handleSubmit = async(e) => {
-
+    e.preventDefault();
     console.log("Login submitted:", form)
 
     try {
@@ -34,37 +35,26 @@ const Home = () => {
         body:JSON.stringify(form),
       });
       
-
-
       const data = await response.json();
+      
       if(!response.ok){
         setMessage(data.message);
         return;
       }
-      if(response.ok){
-        router.push('/homePage'); 
-      }
       
-      
-
+      console.log('Login successful, redirecting to game page');
+      router.push('/game'); 
       
     } catch(err){
-      console.log(err)
+      console.log('Login error:', err);
+      setMessage('An error occurred during login');
     }
-
-
   }
-  const { data: session } = useSession();
-  const router = useRouter();
 
   if (session) {
-    router.replace('/homePage')
-
+    router.replace('/game')
     return null;
   }
-
-
-
 
   return (
 
