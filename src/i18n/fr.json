@@ -1,0 +1,88 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "back": "Retour",
+    "close": "Fermer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "game": {
+    "title": "Simulateur de Budget Municipal",
+    "year": "Année",
+    "of": "sur",
+    "annualBudget": "Budget Annuel",
+    "citizenHappiness": "Bonheur des Citoyens",
+    "completeYear": "Terminer l'Année",
+    "viewGameHistory": "Voir l'Historique",
+    "startGame": "Commencer le Jeu",
+    "allocate": "Allouer",
+    "allocated": "Alloué",
+    "remaining": "Restant"
+  },
+  "categories": {
+    "health": "Santé",
+    "education": "Éducation",
+    "safety": "Sécurité"
+  },
+  "weightSetup": {
+    "title": "Définir les Poids des Secteurs",
+    "description": "Configurez le poids de chaque secteur dans le score final (doit totaliser 100%)",
+    "healthWeight": "Poids Santé (%)",
+    "educationWeight": "Poids Éducation (%)",
+    "safetyWeight": "Poids Sécurité (%)",
+    "validation": {
+      "totalMustBe100": "Les poids totaux doivent égaler 100% (actuellement {{total}}%)",
+      "invalidNumber": "Veuillez entrer un nombre positif valide"
+    }
+  },
+  "yearResults": {
+    "title": "Résultats de l'Année {{year}}",
+    "baseScore": "Score de Base",
+    "finalScore": "Score Final",
+    "specialEvent": "🎉 Événement Spécial Survenu !",
+    "normalYear": "📊 Année Normale",
+    "noEvents": "Aucun événement spécial ne s'est produit cette année.",
+    "event": "Événement",
+    "impact": "Impact",
+    "points": "points",
+    "feedback": "Retour",
+    "yourAllocations": "Vos Allocations",
+    "startNextYear": "Commencer l'Année {{year}}",
+    "viewFinalResults": "Voir les Résultats Finaux"
+  },
+  "gameHistory": {
+    "title": "Historique du Jeu",
+    "noGames": "Aucun jeu trouvé. Terminez une année pour voir votre historique !",
+    "gameNumber": "Jeu #{{number}}",
+    "status": {
+      "started": "Commencé",
+      "reelected": "Réélu"
+    },
+    "currentYear": "Année Actuelle : {{current}}/{{total}}",
+    "totalScore": "Score Total : {{score}}",
+    "averageScore": "Score Moyen : {{score}}"
+  },
+  "errors": {
+    "allocateAllPoints": "Veuillez allouer tous les 100 points avant de terminer l'année !",
+    "invalidInput": "Veuillez entrer un nombre positif valide",
+    "exceedsBudget": "L'allocation dépasse le budget disponible !",
+    "negativeValue": "Veuillez entrer un nombre positif"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "game": "Jeu",
+    "results": "Résultats",
+    "history": "Historique",
+    "settings": "Paramètres"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français"
+  }
+} 

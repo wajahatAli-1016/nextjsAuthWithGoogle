@@ -51,23 +51,21 @@ const RANDOM_EVENTS = [
  */
 function calculateBaseScore(allocations, sectorWeights = SECTOR_WEIGHTS) {
     let baseScore = 0;
-   
     
+    console.log('Allocations:', allocations);
+    console.log('Weights:', sectorWeights);
+    
+    // Calculate base score using the formula: allocation × weight for each sector
     Object.keys(sectorWeights).forEach(sector => {
         const allocation = allocations[sector] || 0;
         const weight = sectorWeights[sector];
+        const sectorScore = allocation * weight;
         
-    
-        let sectorScore = 0;
-        if (allocation > 0) {
-    
-            sectorScore = Math.min(100, (allocation / 100) * 100 * weight);
-        }
-        
+        console.log(`${sector}: ${allocation} × ${weight} = ${sectorScore}`);
         baseScore += sectorScore;
     });
     
-    
+    console.log('Total base score:', baseScore);
     return Math.round(Math.min(100, Math.max(0, baseScore)));
 }
 
@@ -154,15 +152,15 @@ function calculateGameResult(yearlyScores) {
     const averageScore = totalScore / 3;
     
   
-    const isReElected = averageScore >= 60;
+    const isReElected = averageScore >= 30;
     
   
     let performanceRating = "";
-    if (averageScore >= 85) {
+    if (averageScore >= 35) {
         performanceRating = "Outstanding Mayor";
-    } else if (averageScore >= 70) {
+    } else if (averageScore >= 32) {
         performanceRating = "Good Mayor";
-    } else if (averageScore >= 55) {
+    } else if (averageScore >= 30) {
         performanceRating = "Average Mayor";
     } else {
         performanceRating = "Poor Mayor";
