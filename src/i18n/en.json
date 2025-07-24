@@ -1,0 +1,88 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "back": "Back",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "game": {
+    "title": "City Budget Simulator",
+    "year": "Year",
+    "of": "of",
+    "annualBudget": "Annual Budget",
+    "citizenHappiness": "Citizen Happiness",
+    "completeYear": "Complete Year",
+    "viewGameHistory": "View Game History",
+    "startGame": "Start Game",
+    "allocate": "Allocate",
+    "allocated": "Allocated",
+    "remaining": "Remaining"
+  },
+  "categories": {
+    "health": "Health",
+    "education": "Education",
+    "safety": "Safety"
+  },
+  "weightSetup": {
+    "title": "Set Sector Weights",
+    "description": "Configure how much weight each sector has in the final score (must total 100%)",
+    "healthWeight": "Health Weight (%)",
+    "educationWeight": "Education Weight (%)",
+    "safetyWeight": "Safety Weight (%)",
+    "validation": {
+      "totalMustBe100": "Total weights must equal 100% (currently {{total}}%)",
+      "invalidNumber": "Please enter a valid positive number"
+    }
+  },
+  "yearResults": {
+    "title": "Year {{year}} Results",
+    "baseScore": "Base Score",
+    "finalScore": "Final Score",
+    "specialEvent": "🎉 Special Event Occurred!",
+    "normalYear": "📊 Normal Year",
+    "noEvents": "No special events occurred this year.",
+    "event": "Event",
+    "impact": "Impact",
+    "points": "points",
+    "feedback": "Feedback",
+    "yourAllocations": "Your Allocations",
+    "startNextYear": "Start Year {{year}}",
+    "viewFinalResults": "View Final Results"
+  },
+  "gameHistory": {
+    "title": "Game History",
+    "noGames": "No games found. Complete a year to see your history!",
+    "gameNumber": "Game #{{number}}",
+    "status": {
+      "started": "Started",
+      "reelected": "Re-elected"
+    },
+    "currentYear": "Current Year: {{current}}/{{total}}",
+    "totalScore": "Total Score: {{score}}",
+    "averageScore": "Average Score: {{score}}"
+  },
+  "errors": {
+    "allocateAllPoints": "Please allocate all 100 points before completing the year!",
+    "invalidInput": "Please enter a valid positive number",
+    "exceedsBudget": "Allocation exceeds available budget!",
+    "negativeValue": "Please enter a positive number"
+  },
+  "navigation": {
+    "home": "Home",
+    "game": "Game",
+    "results": "Results",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français"
+  }
+} 
