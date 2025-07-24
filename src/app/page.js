@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation';
+import LoginForm from '../components/LoginForm';
 
 export default function RootPage() {
-  // Redirect to the default locale (English)
-  redirect('/en');
-}
+  return <LoginForm />;
+} 

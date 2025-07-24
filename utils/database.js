@@ -11,8 +11,8 @@ export const connectToDB = async () => {
   }
 
   try {
-    await mongoose.connect('mongodb://localhost:27017/demo', {
-      dbName: "demo", // specify the database name
+    await mongoose.connect(process.env.MONGO_URI, {
+      dbName: "mayor", // specify the database name
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

@@ -1,6 +1,7 @@
-export default function LocaleLayout({ children, params }) {
+export default async function LocaleLayout({ children, params }) {
+  const { locale } = await params;
   return (
-    <html lang={params.locale}>
+    <html lang={locale}>
       <body>
         {children}
       </body>
