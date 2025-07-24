@@ -80,9 +80,11 @@ export function getSupportedLocales() {
   return Object.keys(translations);
 }
 
-export default {
+const translationUtils = {
   getTranslation,
   getTranslations,
   isLocaleSupported,
   getSupportedLocales,
-}; 
+};
+
+export default translationUtils; 

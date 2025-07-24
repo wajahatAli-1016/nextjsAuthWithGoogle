@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import styles from './LoginForm.module.css';
 
 export default function LoginForm() {
@@ -106,9 +107,9 @@ export default function LoginForm() {
         </form>
 
         <div className={styles.links}>
-          <a href="/signup" className={styles.link}>
-            Don't have an account? Sign up
-          </a>
+          <Link href="/signup" className={styles.link}>
+            Don&apos;t have an account? Sign up
+          </Link>
         </div>
       </div>
     </div>

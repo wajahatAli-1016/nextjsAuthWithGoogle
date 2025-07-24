@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../../../game.module.css';
 
@@ -107,7 +108,7 @@ export default function GameResults() {
             <li><span className={styles.instructionNumber}>3</span>Or manually add <code>?userId=temp-user-id</code> to the URL</li>
           </ol>
         </div>
-        <a href="/game" className={styles.startGameBtn}>🎮 Start New Game</a>
+        <Link href="/game" className={styles.startGameBtn}>🎮 Start New Game</Link>
       </div>
     </div>
   );
@@ -315,7 +316,7 @@ export default function GameResults() {
           <div className={styles.ctaCard}>
             <h2 className={styles.ctaTitle}>Ready for another term?</h2>
             <p className={styles.ctaText}>Test different strategies and see how they affect your city's performance!</p>
-            <a href="/game" className={styles.ctsButton}>🎮 Play Again</a>
+            <Link href="/game" className={styles.ctsButton}>🎮 Play Again</Link>
           </div>
         </section>
       </div>

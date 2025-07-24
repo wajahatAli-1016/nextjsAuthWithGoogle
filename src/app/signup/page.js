@@ -146,7 +146,7 @@ export default function LoginForm() {
                         <div>
                             <button onClick={() => {
                                 signIn("google")
-                            }} className={styles.btnGoogle}><img className={styles.image} src={image.src}/></button>
+                            }} className={styles.btnGoogle}><img className={styles.image} src={image.src} alt="Google logo"/></button>
                         </div>
                         
                        

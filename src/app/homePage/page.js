@@ -4,7 +4,7 @@ import React from 'react'
 import styles from '../page.module.css'
 import {useSession} from 'next-auth/react'
 
-export default function page(){
+export default function Page(){
     const {data: session} = useSession();
     if (session) {
         return (
@@ -14,7 +14,4 @@ export default function page(){
           </div>
         );
       }
-  
-
-    
 }
