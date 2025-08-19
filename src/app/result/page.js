@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -37,7 +37,7 @@ const ResultsChart = ({ results }) => {
   );
 };
 
-export default function GameResults() {
+function GameResultsContent() {
   const searchParams = useSearchParams();
   const userId = searchParams.get('userId');
   const [results, setResults] = useState([]);
@@ -104,7 +104,7 @@ export default function GameResults() {
           <h3>To see your results:</h3>
           <ol className={styles.instructionList}>
             <li><span className={styles.instructionNumber}>1</span>Complete all 3 years of the game</li>
-            <li><span className={styles.instructionNumber}>2</span>You'll be automatically redirected to this page</li>
+            <li><span className={styles.instructionNumber}>2</span>You&apos;ll be automatically redirected to this page</li>
             <li><span className={styles.instructionNumber}>3</span>Or manually add <code>?userId=temp-user-id</code> to the URL</li>
           </ol>
         </div>
@@ -199,7 +199,7 @@ export default function GameResults() {
                         <div className={styles.allocationCell}>
                           <div className={styles.allocationBar}>
                             <div 
-                              className={`${styles.allocationFill} ${styles.healthFill}`}
+                              className={styles.allocationFill}
                               style={{ width: `${yearData.allocations.health}%` }}
                             ></div>
                           </div>
@@ -210,7 +210,7 @@ export default function GameResults() {
                         <div className={styles.allocationCell}>
                           <div className={styles.allocationBar}>
                             <div 
-                              className={`${styles.allocationFill} ${styles.educationFill}`}
+                              className={styles.allocationFill}
                               style={{ width: `${yearData.allocations.education}%` }}
                             ></div>
                           </div>
@@ -221,7 +221,7 @@ export default function GameResults() {
                         <div className={styles.allocationCell}>
                           <div className={styles.allocationBar}>
                             <div 
-                              className={`${styles.allocationFill} ${styles.safetyFill}`}
+                              className={styles.allocationFill}
                               style={{ width: `${yearData.allocations.safety}%` }}
                             ></div>
                           </div>
@@ -315,11 +315,24 @@ export default function GameResults() {
         <section className={styles.ctaSection}>
           <div className={styles.ctaCard}>
             <h2 className={styles.ctaTitle}>Ready for another term?</h2>
-            <p className={styles.ctaText}>Test different strategies and see how they affect your city's performance!</p>
+            <p className={styles.ctaText}>Test different strategies and see how they affect your city&apos;s performance!</p>
             <Link href="/game" className={styles.ctsButton}>🎮 Play Again</Link>
           </div>
         </section>
       </div>
     </div>
+  );
+}
+
+export default function GameResults() {
+  return (
+    <Suspense fallback={
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingSpinner}></div>
+        <h2 className={styles.loadingTitle}>Loading...</h2>
+      </div>
+    }>
+      <GameResultsContent />
+    </Suspense>
   );
 } 

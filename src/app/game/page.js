@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import styles from "../../../game.module.css"
 import dollar from "../../assets/dollar.png";
 import health from "../../assets/hospital.png";
@@ -12,7 +12,7 @@ import useTranslation from "../../i18n/useTranslation";
 import LanguageSwitcher from "../../components/LanguageSwitcher";
 
 
-const Game = () => {
+const GameContent = () => {
     const { t } = useTranslation();
     const [points, setPoints] = useState(100);
     const [inputValues, setInputValues] = useState({
@@ -708,6 +708,14 @@ const Game = () => {
                 </div>
             )}
         </div>
+    );
+};
+
+const Game = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <GameContent />
+        </Suspense>
     );
 };
 

@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { getTranslation, getTranslations, isLocaleSupported } from './translations';
@@ -41,7 +42,15 @@ export function useTranslation() {
     if (isLocaleSupported(locale)) {
       const newPath = `/${locale}/game`;
       
-      const searchString = searchParams.toString();
+      // Safely get search params string
+      let searchString = '';
+      try {
+        searchString = searchParams.toString();
+      } catch (error) {
+        // Handle case where searchParams is not available during SSR
+        console.warn('Search params not available during SSR');
+      }
+      
       const fullPath = searchString ? `${newPath}?${searchString}` : newPath;
       
       router.push(fullPath);
