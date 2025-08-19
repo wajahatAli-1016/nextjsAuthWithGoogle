@@ -710,5 +710,14 @@ const Game = () => {
         </div>
     );
 };
+const Game = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <GameContent />
+        </Suspense>
+    );
+};
+
+export default Game; 
 
 export default Game; 
